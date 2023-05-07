@@ -19,8 +19,8 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build . -t ${{ secrets.AC_REPOSITORY_URL }}/myapp:${{ github.sha }}
-        docker push ${{ secrets.AC_REPOSITORY_URL }}/myapp:${{ github.sha }}     
+        docker build . -t ${{ secrets.AC_REPOSITORY_URL }}/calculator:${{ github.sha }}
+        docker push ${{ secrets.AC_REPOSITORY_URL }}/calculator:${{ github.sha }}     
 
     #- uses: azure/webapps-deploy@v2
     #  with:
