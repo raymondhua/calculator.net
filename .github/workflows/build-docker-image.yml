@@ -24,6 +24,6 @@ jobs:
 
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 'calculator'
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         images: '${{ secrets.AC_REPOSITORY_URL }}/calculator:${{ github.sha }}'
