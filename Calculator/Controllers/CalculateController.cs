@@ -19,9 +19,7 @@ public class CalculateController : ControllerBase
     public Calculator Get(double num1, double num2, string op)
     {
         Calculator c1 = new Calculator();
-
         c1.total = calc.Compute(num1,num2,op);
-        c1.statusCode = 200;
         return c1;
     }
 }
