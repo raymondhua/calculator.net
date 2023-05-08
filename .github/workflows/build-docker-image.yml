@@ -22,6 +22,16 @@ jobs:
         docker build . -t ${{ secrets.AC_REPOSITORY_URL }}/calculator:${{ github.sha }}
         docker push ${{ secrets.AC_REPOSITORY_URL }}/calculator:${{ github.sha }}     
 
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: build
+    environment: staging
+    # required to interact with GitHub's OIDC Token endpoint
+    permissions:
+      id-token: write
+      contents: read
+    steps:
     - uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
