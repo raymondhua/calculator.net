@@ -21,6 +21,7 @@ public class CalculateController : ControllerBase
         Calculator c1 = new Calculator();
 
         c1.total = calc.Compute(num1,num2,op);
+        c1.statusCode = 200;
         return c1;
     }
 }
