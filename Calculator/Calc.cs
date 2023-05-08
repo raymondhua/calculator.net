@@ -58,7 +58,6 @@ namespace Calculator
         {
             if (secondNum == 0)
             {
-                Console.WriteLine("Cannot divide by zero");
                 return 0;
             }
             else
